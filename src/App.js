@@ -158,6 +158,21 @@ const Swap_for_tok = async(val3,val4,val5)=>{
 			approve_user(y);
 		  }
 
+		const mint_tok1 = async()=>{
+			const accounts = await  web3.eth.getAccounts();
+			await erc20contract1.methods.mint(web3.utils.toBN(10000000000000000000)).send({from:accounts[0]});
+		}
+
+		const mint_tok2 = async()=>{
+			const accounts = await  web3.eth.getAccounts();
+			await erc20contract2.methods.mint(web3.utils.toBN(10000000000000000000)).send({from:accounts[0]});
+		}
+
+		const mint_tok3 = async()=>{
+			const accounts = await  web3.eth.getAccounts();
+			await erc20contract3.methods.mint(web3.utils.toBN(10000000000000000000)).send({from:accounts[0]});
+		}
+
 	  
 		  
 	
@@ -198,6 +213,11 @@ return (
 		<Button onClick={handle2} >
 		approve user
 		</Button><br/><br/>
+
+        <h2>Faucet</h2>
+		<Button onClick={mint_tok1} >Mint Token1</Button>&nbsp;&nbsp;
+		<Button onClick={mint_tok2} >Mint Token2</Button>&nbsp;&nbsp;
+		<Button onClick={mint_tok3} >Mint Token3</Button><br/><br/>
 
 		<h2>Invest Amount</h2>
 		<br/>
